@@ -2,61 +2,102 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tienda de Productos Piratas</title>
-
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <title>Mis Actividades</title>
     <link rel="stylesheet" href="style.css">
-    <header class="header-practica">
-        <a href="../../index.html" class="btn-inicio">⬅ Inicio</a>
-    </header>
 </head>
 <body>
 
-<header class="header-bar">
-    <h1><i class="fi fi-br-shopping-cart"></i> Tienda de Productos Piratas</h1>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>Mis Actividades</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="activo">Inicio</a>
+        </nav>
+    </header>
 
-    <div class="search-box">
-        <input type="text" id="txtBusqueda" placeholder="Buscar artículo">
-        <button id="btnBuscar">🔍</button>
-    </div>
+    <!-- BUSCADOR -->
+    <section class="buscador">
+        <input type="text" placeholder="Buscar actividad...">
+        <button>Buscar</button>
+    </section>
 
-    <a href="add-product.html?mode=new" class="btn-add">➕ Agregar</a>
-</header>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-actividades">
 
-<section class="options-panel">
-    <select id="comboCategorias">
-        <option value="">Todas</option>
-    </select>
+        <!-- PARCIAL 1 -->
+        <h2 class="titulo-parcial">Parcial 1</h2>
 
-    <select id="comboOrden">
-        <option value="">Ordenar</option>
-        <option value="title-asc">Nombre A-Z</option>
-        <option value="title-desc">Nombre Z-A</option>
-        <option value="price-asc">Precio ↑</option>
-        <option value="price-desc">Precio ↓</option>
-    </select>
-</section>
+        <div class="tarjeta">
+            <h2>Tarea 1</h2>
+            <p>ACTIVIDAD-1-PRODUCTOS-API</p>
+            <a href="parcial1/ACTIVIDAD-1-PRODUCTOS-API/index.html" class="btn">Ver más</a>
+        </div>
 
-<table class="data-table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Imagen</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Categoría</th>
-            <th>Opciones</th>
-        </tr>
-    </thead>
-    <tbody id="tablaDatos"></tbody>
-</table>
+        <div class="tarjeta">
+            <h2>Tarea 2</h2>
+            <p>API_PROPIA</p>
+            <a href="parcial1/API_PROPIA/index.html" class="btn">Ver más</a>
+        </div>
 
-<footer class="pager">
-    <button id="btnPrev">◀</button>
-    <span id="lblPagina"></span>
-    <button id="btnNext">▶</button>
-</footer>
+        <div class="tarjeta">
+            <h2>Tarea 3</h2>
+            <p>PRACTICA-API</p>
+            <a href="parcial1/PRACTICA-API/index.html" class="btn">Ver más</a>
+        </div>
 
-<script src="main.js"></script>
+        <div class="tarjeta">
+            <h2>Tarea 4</h2>
+            <p>Practica-2-Ubicacion</p>
+            <a href="parcial1/Practica-2-Ubicacion/index.html" class="btn">Ver más</a>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Tarea 5</h2>
+            <p>Dashboard_Cloud_Juan_Jos-_Hernandez_Calva</p>
+            <a href="parcial1/Dashboard_Cloud_Juan_Jos-_Hernandez_Calva/index.html" class="btn">Ver más</a>
+        </div>
+
+
+        <!-- PARCIAL 2 -->
+        <h2 class="titulo-parcial">Parcial 2</h2>
+
+        <div class="tarjeta">
+            <h2>Tarea 6</h2>
+            <p>Dashboard Administrativo de Productos (DummyJSON)</p>
+            <a href="parcial2/Dashboard Administrativo de Productos (DummyJSON)/index.html" class="btn">Ver más</a>
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 - Mis Actividades</p>
+    </footer>
+
+    <script>
+    const input = document.querySelector('.buscador input');
+    const boton = document.querySelector('.buscador button');
+    const tarjetas = document.querySelectorAll('.tarjeta');
+
+    boton.addEventListener('click', () => {
+        const texto = input.value.toLowerCase();
+
+        tarjetas.forEach(tarjeta => {
+            const titulo = tarjeta.querySelector('h2').textContent.toLowerCase();
+
+            if (titulo.includes(texto)) {
+                tarjeta.style.display = 'block';
+            } else {
+                tarjeta.style.display = 'none';
+            }
+        });
+    });
+
+</script>
+
 </body>
 </html>
+
