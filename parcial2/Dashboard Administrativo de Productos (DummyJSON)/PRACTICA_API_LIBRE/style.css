@@ -102,3 +102,21 @@ h2 {
 .hidden {
   display: none;
 }
+
+.header-practica {
+    background-color: #1e293b;
+    padding: 15px 20px;
+}
+
+.btn-inicio {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #2563eb;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.btn-inicio:hover {
+    background-color: #1d4ed8;
+}
